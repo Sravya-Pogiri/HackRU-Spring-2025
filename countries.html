@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pick the Country</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #EFBDA2;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .title {
+            color: #6D2F3A;
+            font-size: 4vw;
+            font-family: JejuHallasan, sans-serif;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+        .countries {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .country {
+            width: 220px;
+            position: relative;
+            text-align: center;
+        }
+        .country img {
+            width: 100%;
+            border-radius: 16px;
+        }
+        .country-name {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 1.5vw;
+            font-family: 'Inknut Antiqua', serif;
+            font-weight: 900;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 10px;
+        }
+        @media (max-width: 768px) {
+            .title {
+                font-size: 6vw;
+            }
+            .country-name {
+                font-size: 2vw;
+            }
+        }
+        @media (max-width: 480px) {
+            .title {
+                font-size: 8vw;
+            }
+            .country-name {
+                font-size: 3vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Pick the Country</div>
+        <div class="countries">
+            <div class="country">
+                <img src="Images/Pakistan.png" alt="Pakistan">
+                <div class="country-name">Pakistan</div>
+            </div>
+            <div class="country">
+                <img src="Images/Sri Lanka.png" alt="Sri Lanka">
+                <div class="country-name">Sri Lanka</div>
+            </div>
+            <div class="country">
+                <img src="Images/Indonesia.png" alt="Indonesia">
+                <div class="country-name">Indonesia</div>
+            </div>
+            <div class="country">
+                <img src="Images/Malaysia.png" alt="Malaysia">
+                <div class="country-name">Malaysia</div>
+            </div>
+
+            <div class="country">
+                <img src="Images/Pakistan.png" alt="Pakistan">
+                <div class="country-name">Pakistan</div>
+            </div>
+            <div class="country">
+                <img src="Images/Sri Lanka.png" alt="Sri Lanka">
+                <div class="country-name">Sri Lanka</div>
+            </div>
+            <div class="country">
+                <img src="Images/Indonesia.png" alt="Indonesia">
+                <div class="country-name">Indonesia</div>
+            </div>
+            <div class="country">
+                <img src="Images/Malaysia.png" alt="Malaysia">
+                <div class="country-name">Malaysia</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

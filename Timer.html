@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Countdown Timer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #timer {
+            font-size: 2em;
+            margin: 20px;
+        }
+        select, button {
+            padding: 8px;
+            font-size: 1em;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Countdown Timer</h2>
+    
+    <label>Hours:</label>
+    <select id="hours">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+    
+    <label>Minutes:</label>
+    <select id="minutes">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="30">30</option>
+        <option value="45">45</option>
+    </select>
+
+    <button onclick="startTimer()">Start Timer</button>
+    <button onclick="stopTimer()">Stop Timer</button>
+
+    <p id="timer">00:00:00</p>
+
+    <script>
+        let countdown;
+
+        function startTimer() {
+            clearInterval(countdown); // Reset any existing timer
+
+            let hours = parseInt(document.getElementById("hours").value);
+            let minutes = parseInt(document.getElementById("minutes").value);
+            let totalSeconds = (hours * 3600) + (minutes * 60);
+
+            if (totalSeconds <= 0) {
+                alert("Please select a valid time.");
+                return;
+            }
+
+            displayTime(totalSeconds);
+
+            countdown = setInterval(() => {
+                totalSeconds--;
+                displayTime(totalSeconds);
+
+                if (totalSeconds <= 0) {
+                    clearInterval(countdown);
+                    document.getElementById("timer").textContent = "Time's up!";
+                }
+            }, 1000);
+        }
+
+        function stopTimer() {
+            clearInterval(countdown);
+            document.getElementById("timer").textContent = "Timer Stopped";
+        }
+
+        function displayTime(seconds) {
+            let hrs = Math.floor(seconds / 3600);
+            let min = Math.floor((seconds % 3600) / 60);
+            let sec = seconds % 60;
+            document.getElementById("timer").textContent = 
+                `${String(hrs).padStart(2, '0')}:${String(min).padStart(2, '0')}:${String(sec).padStart(2, '0')}`;
+        }
+    </script>
+
+    
+
+</body>
+</html>
